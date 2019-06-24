@@ -43,6 +43,7 @@ class Dashboard extends Component {
     }
 }
 
+
 function mapStateToProps(reduxState) {
     const { id, email } = reduxState;
     return {
