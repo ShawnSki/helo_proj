@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import './Login.css';
 
 class Login extends Component {
     constructor() {
@@ -37,7 +38,7 @@ class Login extends Component {
     render() {
         console.log(this.state)
         return (
-            <div className='mainCont'>
+            <div className='loginCont'>
                 <div className='signupCont'>
                     <h1>Log in</h1>
                     <form onSubmit={this.handleAdminLogin}>
