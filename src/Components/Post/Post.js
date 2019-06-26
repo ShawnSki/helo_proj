@@ -9,26 +9,15 @@ class Post extends Component {
         }
     }
 
-    componentDidMount() {
-        this.handleGetPosts();
-    }
-    // example of how I could use match to get posts from the database
-    handleGetPosts = async () => {
-        await axios.get(`/api/posts/${this.props.match.params.id}`)
-            .then(res => {
-                this.setState({
-                    posts: res.data
-                })
-            })
-    }
 
-
-
+    // example of using match
+  
     render() {
-       
+       console.log('props', this.props)
         return (
             <div>
                 <h1>Post coming soon</h1>
+                <p>My ID is {this.props.match.params.id}</p>
             </div>
         )
     }

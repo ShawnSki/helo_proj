@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { updateAdmin, clearAdmin } from '../../redux/adminReducer';
 import { connect } from 'react-redux';
 
@@ -37,9 +38,11 @@ class Dashboard extends Component {
 
 
     render() {
+        console.log('state', this.state.admin)
         return (
             <div>
                 <h1>Dashboard</h1>
+                <Link to={`/post/${this.state.admin.id}`}><button>Posts</button></Link>
             </div>
         )
     }
