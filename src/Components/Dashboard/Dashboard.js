@@ -19,6 +19,7 @@ class Dashboard extends Component {
     handleGetAdmin = async () => {
         await axios.get('/auth/dashboard')
             .then(res => {
+                // console.log('res', res.data)
                 this.props.updateAdmin(res.data)
                 this.setState({
                     admin: res.data
@@ -27,7 +28,8 @@ class Dashboard extends Component {
             .catch((err) => {
                 console.log(err)
             })
-        if (!this.props.firstname) {
+            // console.log('props', this.props)
+        if (!this.props.email) {
             this.props.history.push('/login')
         }
     }
@@ -37,7 +39,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <h1>{this.props.firstname}'s Dashboard</h1>
+                <h1>Dashboard</h1>
             </div>
         )
     }
